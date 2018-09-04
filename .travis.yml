@@ -4,7 +4,7 @@ python:
 - '3.4'
 - '3.5'
 - '3.6'
-install: pip install flake8 tox-travis
+install: pip install flake8 tox-travis codecov
 
 services:
   - postgresql
@@ -15,6 +15,10 @@ before_script:
 script:
 - make lint
 - make test
+
+after_success:
+  - codecov
+
 deploy:
   provider: pypi
   user: disqus
@@ -22,8 +26,3 @@ deploy:
     secure: VMFRRlf1r/rIfHiKbPkKafCUCPMqUmwxKXS02COgj38354YiF5wK1IK89FBd+Jeuym3CL+ZXbsHpjGXV16XxGn3QWknlErLFtrkPykGceQczMYPUAaf4STH5/RMpllGZXzsrIu3miW/xa1fpMhZSdVFSPExgmDrVH0TVfO5m7rM=
   on:
     tags: true
-
-before_install:
-  - pip install codecov
-after_success:
-  - codecov --file coverage/lcov.info --disable search
