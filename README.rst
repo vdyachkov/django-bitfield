@@ -3,7 +3,8 @@ django-bitfield
 
 .. image:: https://api.travis-ci.org/vdyachkov/django-bitfield.png?branch=master
     :target: https://travis-ci.org/vdyachkov/django-bitfield
-[![codecov](https://codecov.io/gh/vdyachkov/django-bitfield/branch/master/graph/badge.svg)](https://codecov.io/gh/vdyachkov/django-bitfield)
+.. image:: https://codecov.io/gh/vdyachkov/django-bitfield/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/vdyachkov/django-bitfield
 
 Provides a BitField like class (using a BigIntegerField) for your Django models.
 
